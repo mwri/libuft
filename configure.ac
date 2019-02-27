@@ -7,6 +7,7 @@ AC_CONFIG_MACRO_DIRS([m4])
 PKG_CHECK_MODULES([CHECK], [check], have_check=yes)
 
 AC_PROG_CC
+AC_PROG_CC_STDC
 
 AC_DEFINE([UFT_MAX_MSG_LEN], [1024], [Maximum message length (applies to string buffers)])
 
