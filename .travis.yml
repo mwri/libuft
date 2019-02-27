@@ -13,3 +13,5 @@ script:
     - make check
 after_success:
     - coveralls-lcov coverage/lcov.info
+after_failure:
+    - cat test/*.log
