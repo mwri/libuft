@@ -11,6 +11,3 @@ check_uft_tx_SOURCES = check_uft_tx.c \
 check_uft_tx_CFLAGS = @CHECK_CFLAGS@ -I../src --coverage
 check_uft_tx_LDFLAGS =
 check_uft_tx_LDADD = @CHECK_LIBS@
-
-check:
-	make -C .. cov_report

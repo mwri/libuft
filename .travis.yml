@@ -12,6 +12,8 @@ script:
     - make
     - make check
 after_success:
+    - lcov --base-directory src --directory . -c -o coverage/lcov.info
+    - lcov --remove coverage/lcov.info "*/check_*.c" -o coverage/lcov.info
     - coveralls-lcov coverage/lcov.info
 after_failure:
     - cat test/*.log
