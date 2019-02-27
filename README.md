@@ -1,4 +1,4 @@
-# libutf (Userspace FileSystem Transactions)
+# libuft [![Build Status](https://travis-ci.org/mwri/libuft.svg?branch=master)](https://travis-ci.org/mwri/libuft) [![Coverage Status](https://coveralls.io/repos/github/mwri/libuft/badge.svg?branch=master)](https://coveralls.io/github/mwri/libuft?branch=master)
 
 If you want to execute a series of filesystem changes (such as creating or
 deleting files, directories and symbolic links) where all the changes should
@@ -203,7 +203,7 @@ if (uft_tx_ok(child_tx)) {
 ```
 
 The parent transaction can take whatever action is required on the
-failure of the child, including calling `utf_tx_fail()` to fail
+failure of the child, including calling `uft_tx_fail()` to fail
 itself, though if it always fails as a result of the child failure
 then really there's not much point in the childs operations being
 a child transaction; the operations could all be in the parent.

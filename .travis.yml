@@ -1,0 +1,15 @@
+language: c
+compiler:
+    - gcc
+before_install:
+    - sudo apt-get update -y
+    - apt-get install -y build-essential libtool autoconf pkg-config check gcovr lcov git
+    - gem install coveralls-lcov
+script:
+    - libtoolize
+    - autoreconf -i
+    - ./configure CFLAGS="-g -O0"
+    - make
+    - make check
+after_success:
+    - coveralls-lcov coverage/lcov.info
