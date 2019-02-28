@@ -48,3 +48,4 @@
 /test/check_*.log
 /test/check_*.trs
 /test/test-suite.log
+/test/test-suite.tap
