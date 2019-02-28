@@ -10,8 +10,8 @@ script:
     - autoreconf -i
     - ./configure CFLAGS="-g -O0"
     - make
-    - CK_TAP_LOG_FILE_NAME=test-suite.tap make check
-    - cat test/test-suite.tap
+    - make check
+    - cat test/*.log
 after_success:
     - mkdir -p coverage
     - lcov --base-directory src --directory . -c -o coverage/lcov.info
@@ -19,4 +19,3 @@ after_success:
     - coveralls-lcov coverage/lcov.info
 after_failure:
     - cat test/*.log
-    - cat test/test-suite.tap
